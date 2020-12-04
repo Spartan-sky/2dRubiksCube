@@ -202,6 +202,5 @@
 
         <Button x:Name="ResetButton" Click="ResetButton_Click" Height="30" Width="50">Reset</Button>
         <Button x:Name="SaveButton" Click="SaveButton_Click" Height="30" Width="50" Margin="75,183,293.667,182.333">Save</Button>
-
     </Grid>
 </Window>

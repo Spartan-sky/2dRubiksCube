@@ -26,6 +26,9 @@ namespace _2dRubiksCube
 
         public MainWindow()
         {
+            EventManager.RegisterClassHandler(typeof(Window),
+                Keyboard.KeyUpEvent, new KeyEventHandler(Key_Up), true);
+
             InitializeComponent();
 
             if(!File.Exists(PATH))
@@ -35,11 +38,46 @@ namespace _2dRubiksCube
                     sw.WriteLine("Data of moves:\n");
                 }
             }
+        }
 
-            //using (StreamWriter sw = File.AppendText(path))
-            //{
-            //    sw.WriteLine("HELP");
-            //}
+        private void Key_Up(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.NumPad7:
+                    Line1_MouseDown(null, null);
+                    break;
+                case Key.NumPad8:
+                    Line2_MouseDown(null, null);
+                    break;
+                case Key.NumPad9:
+                    Line3_MouseDown(null, null);
+                    break;
+                case Key.NumPad4:
+                    Line8_MouseDown(null, null);
+                    break;
+                case Key.NumPad5:
+                    Line9_MouseDown(null, null);
+                    break;
+                case Key.NumPad6:
+                    Line10_MouseDown(null, null);
+                    break;
+                case Key.NumPad1:
+                    Line15_MouseDown(null, null);
+                    break;
+                case Key.NumPad2:
+                    Line16_MouseDown(null, null);
+                    break;
+                case Key.NumPad3:
+                    Line17_MouseDown(null, null);
+                    break;
+                case Key.R:
+                    ResetButton_Click(null, null);
+                    break;
+                case Key.S:
+                    SaveButton_Click(null, null);
+                    break;
+            }
         }
 
         private void Line1_MouseDown(object sender, MouseButtonEventArgs e)
